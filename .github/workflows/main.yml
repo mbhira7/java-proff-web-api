@@ -58,3 +58,6 @@ jobs:
           containerAppEnvironment: env-bhiravina-01
           imageToDeploy: ${{ env.IMAGE_NAME }}
           location: 'norway east'
+          acrName: brightstraining24fall
+          acrUsername: ${{ secrets.REGISTRY_USERNAME }}
+          acrPassword: ${{ secrets.REGISTRY_PASSWORD }}
