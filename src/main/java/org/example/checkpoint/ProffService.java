@@ -23,7 +23,9 @@ public class ProffService implements IProffService {
         }
         return Collections.emptyList();
     }
+
     
+
     @Override
     public Company fetchCompanyById(String id) {
         String url =  "https://api.proff.no/api/companies/eniropro/NO/{id}";
