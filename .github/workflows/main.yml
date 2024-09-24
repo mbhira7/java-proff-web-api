@@ -35,11 +35,11 @@ jobs:
 
       # Log in to Azure Container Registry (ACR)
     - name: Log in to ACR
-    uses: docker/login-action@v2
-    with:
-        registry: brightstraining24fall.azurecr.io
-        username: ${{ secrets.REPOSITORY_USERNAME }}
-        password: ${{ secrets.REPOSITORY_PASSWORD }}
+      uses: docker/login-action@v2
+      with:
+          registry: brightstraining24fall.azurecr.io
+          username: ${{ secrets.REPOSITORY_USERNAME }}
+          password: ${{ secrets.REPOSITORY_PASSWORD }}
 
     - name: Push Docker image to ACR
       run: docker push $IMAGE_NAME
