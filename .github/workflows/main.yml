@@ -24,6 +24,17 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-    # Bygger Docker-imaget
-    - name: Build Docker image
-      run: docker build -t java-web-api:latest .
+    - name: Run Tests with Maven
+      run: mvn test --file pom.xml
+
+    - name: Log in to ACR
+      run: docker login brightstraining24fall.azurecr.io --username ${{ secrets.REGISTRY_USERNAME }} --password ${{ secrets.REGISTRY_PASSWORD }}
+
+    - name: Build Docker image with unique tag
+      run: |
+          VERSION_TAG=$(date +%Y%m%d%H%M%S)
+          IMAGE_NAME="brightstraining24fall.azurecr.io/bhiravina/javaapi:${VERSION_TAG}"
+          docker build -t $IMAGE_NAME .
+
+    - name: Push Docker image to ACR
+      run: docker push $IMAGE_NAME
