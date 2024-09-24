@@ -55,7 +55,6 @@ jobs:
         with:
           resourceGroup: rg-bhiravina-ops-1
           containerAppName: java-web-api-proff
-          containerAppEnvironment: env-bhiravina-01
           imageToDeploy: ${{ env.IMAGE_NAME }}
           acrName: brightstraining24fall
           acrUsername: ${{ secrets.REGISTRY_USERNAME }}
