@@ -35,8 +35,8 @@ jobs:
 
       # Log in to Azure Container Registry (ACR)
     - name: Log in to ACR
-    - uses: docker/login-action@v2
-    - with:
+    uses: docker/login-action@v2
+    with:
         registry: brightstraining24fall.azurecr.io
         username: ${{ secrets.REPOSITORY_USERNAME }}
         password: ${{ secrets.REPOSITORY_PASSWORD }}
