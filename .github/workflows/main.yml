@@ -54,6 +54,6 @@ jobs:
         uses: 'azure/container-apps-deploy-action@v1'
         with:
           resourceGroup: rg-bhiravina-ops-1
+          containerAppName: java-web-api-proff
           imageToDeploy: ${{ env.IMAGE_NAME }}
-          name: java-app
           location: 'norway east'
