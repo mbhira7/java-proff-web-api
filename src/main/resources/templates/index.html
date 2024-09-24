@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Søk etter firmaer</h1>
+
+    <div th:if="${user == null}">
+        <a href="/login">Logg inn</a>
+    </div>
+
+    <div th:if="${user != null}">
+        <form method="post" th:action="@{/logout}">
+            <input type="submit" value="Logout" />
+        </form>
+    </div>
+
+    </br>
+
+    <form th:action="@{/search}" method="get">
+        </br>
+        <input type="text" name="query" placeholder="Søk" required/>
+        <button type="submit">Søk</button>
+    </form>
+
+</body>
+</html>

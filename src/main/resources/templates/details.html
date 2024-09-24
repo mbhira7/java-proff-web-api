@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1 th:text="${company.name}"></h1>
+
+    <table>
+        <tr>
+            <th>Organisasjonsnummer</th>
+            <th>Beskrivelse</th>
+            <th>Besøksadresse</th>
+        </tr>
+
+        <tr>
+            <td th:text="${company.organisationNumber}"></td>
+            <td th:utext="${company.description}"></td>
+            <td th:if="${company.visitorAddress != null}" th:text="${company.visitorAddress.addressLine}"></td>
+        </tr>
+    </table>
+
+    <div th:if="${user != null}">
+        <a th:href="@{/details/{id}/secret(id=${company.companyId})}">Hemmelige detaljer</a>
+    </div>
+
+</body>
+</html>
