@@ -19,7 +19,6 @@ public class CheckpointApplication {
                 .defaultHeader("Authorization", "Token PYFYMri0kGNF8aDnbuPACbtbh")
                 .build();
     }
-    
     @Bean
     public ProffService proffService(RestTemplate restTemplate) {
         return new ProffService(restTemplate);
